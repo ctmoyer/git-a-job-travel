@@ -15,3 +15,15 @@
         @mixin-content;
     } 
 }
+
+/* Floating elements removes them from the flow of the page */
+/* To bring them back into the flow of the page, you clear them */
+/* Using the psudo selector ::after allows you to add empty content and clear
+    without polluting the html */
+@define-mixin clearfix{
+    &::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+}

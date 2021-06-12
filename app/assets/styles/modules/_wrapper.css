@@ -1,7 +1,25 @@
 .wrapper{
     padding-left: 18px;
     padding-right: 18px;
-    max-width: 1200px;
+    /* We add 36px to the max-width to account for the padding we added */
+    /* This is because we set box-sizing: border-box on all elements */
+    /* Because of this, layout values like margin, padding, and border are included in the max-width calc */
+    max-width: 1236px;
     margin-left: auto;
     margin-right: auto;
+
+    &--medium{
+        max-width: 960px;
+    }
+    /* Any wrapper that has a wrapper in it */
+    .wrapper{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &--b-margin{
+        margin-bottom: 1em;
+        @mixin atSmall {
+            margin-bottom: 3.875em;            
+        }
+    }
 }

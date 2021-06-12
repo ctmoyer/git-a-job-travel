@@ -6,3 +6,10 @@ img{
     max-width: 100%;
     height: auto;
 }
+*{
+    /* This tells the browser to add the padding but not add it into the calculation of the percentages. */
+    box-sizing: border-box;
+}
+a{
+    color: $mainOrange;
+}
