@@ -4,27 +4,63 @@
     /* To bring them back into the flow of the page, you clear them */
     /* Using the psudo selector ::after allows you to add empty content and clear
        without polluting the html */
-    @mixin clearfix{};
-
-    &--gutters div:last-child{
-        padding-right: 0px;
-    }
-    &--gutters-large div:last-child{
-        padding-right: 0px;
-        
-        
-    }
+    @mixin clearfix{};    
     
+    &--gutters{
+        /*
+        position: relative;
+        left: 32.5px
+        */
+        margin-right: -65px;
+
+    }
     &--gutters > div{
         padding-right: 65px;
     }
     
+    &--gutters-large{
+        /*
+        position: relative;
+        left: 50px
+        */
+        margin-right: -100px;
+    }
     &--gutters-large > div{
         padding-right: 0px;
+        padding-right: 100px;
+
+    }
+
+    &--gutters-small{
+        /* alternate solution to the gutter issue. */
+        /*
+        position: relative;
+        left: 17.5px
+        */
+        /*  The gutters add padding to the right. This margin rule
+            extends the overall row by the same amount as a gutter.
+            This means that the added padding is essentially eaten 
+            by extra margin, effectively negating it.
+        */
+        margin-right: 0px;
         @mixin atSmall {
-            padding-right: 100px;
+            margin-right: -45px;            
+        }
+    }
+    &--gutters-small > div{
+        padding-right: 0px;
+        @mixin atSmall {
+            padding-right: 45px;
             
         }
+    }
+
+    &--gutters-small{
+        
+    }
+
+    &--t-padding{
+        padding-top: 80px;
     }
     
     &__b-margin-until-medium{
@@ -53,5 +89,16 @@
             margin-bottom: 0;
         }
 
+    }
+
+    /* Begin Equal Height Rules */
+    &--equal-heights-at-medium{
+        @mixin atMedium {
+            display: flex;
+        }
+        & > div{
+            float: none;
+            display: flex;
+        }
     }
 }

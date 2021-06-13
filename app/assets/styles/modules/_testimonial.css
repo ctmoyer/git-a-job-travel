@@ -1,0 +1,35 @@
+.testimonial{
+    background-color: rgba(255,255,255,.8);
+    padding: 0 1.8125rem 1px 1.8125rem;
+
+    &__photo{
+        /* Rounded corners! */
+        border-radius: 80px;
+        /*  The parent div becomes rounded, and by hiding the overflowing content
+            We create the illusion of circular content! */
+        overflow: hidden;
+        /*  The circle effect only works when the parent div is constrained to the
+            same size as the contained image. */
+        width: 160px;
+        height:160px;
+        margin: 0 auto -80px auto;
+        position: relative;
+        top: -80px;      
+        border: 6px solid white;
+
+    }
+    &__title{
+        color: $mainBlue;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0;
+    }
+    &__subtitle{
+        color: $mainOrange;
+        text-align: center;
+        font-size: .9375rem;
+        font-weight: 400;
+        margin-top: .25rem 0 1rem 0;
+    }
+}
