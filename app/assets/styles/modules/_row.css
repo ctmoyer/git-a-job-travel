@@ -12,15 +12,19 @@
     &--gutters-large div:last-child{
         padding-right: 0px;
         
-
+        
     }
-
+    
     &--gutters > div{
         padding-right: 65px;
     }
-
+    
     &--gutters-large > div{
-        padding-right: 100px;
+        padding-right: 0px;
+        @mixin atSmall {
+            padding-right: 100px;
+            
+        }
     }
     
     &__b-margin-until-medium{
