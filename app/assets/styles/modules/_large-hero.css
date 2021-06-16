@@ -1,17 +1,21 @@
 .large-hero{
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
     border-bottom: 10px solid $mainBlue;
 
     &__image{
-        display: block;
+        grid-column: 1;
+        grid-row: 1;
+
+        img{
+            display: block;
+        }
     }
 
     &__text-content{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
-        width: 100%;
+        grid-column: 1;
+        grid-row: 1;
+        align-self: center;
         text-align: center;    
         /*  Accommodating the navbar.
             After taking the navbar out of page flow,
