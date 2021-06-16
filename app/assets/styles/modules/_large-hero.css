@@ -12,7 +12,13 @@
         transform: translateY(-50%);
         left: 0;
         width: 100%;
-        text-align: center;        
+        text-align: center;    
+        /*  Accommodating the navbar.
+            After taking the navbar out of page flow,
+            the hero section is too close to the menu.
+            60px is the height of the menu.
+        */
+        padding-top: 60px;    
     }
 
     &__title{
@@ -21,7 +27,7 @@
         margin: 0;
         font-size: 2.4rem;
 
-        @add-mixin atSmall {
+        @mixin atSmall {
             font-size: 4.8rem;
         }
     }
@@ -31,7 +37,7 @@
         color: #2f5572;
         font-size: 1.5rem;
 
-        @add-mixin atSmall {
+        @mixin atSmall {
             font-size: 2.9rem;
         }
     }
