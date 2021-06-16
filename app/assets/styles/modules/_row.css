@@ -88,11 +88,44 @@
         &__b-margin-until-medium{
             margin-bottom: 0;
         }
+    
+    }
+    @mixin atLarge {
+        &__large-4{
+            float: left;
+            width: 33.3%;
+        }
+        &__large-6{
+            float: left;
+            width: 50%;
+        }
+        &__large-8{
+            float: right;
+            width: 66.6%;
+        }
+        &__large-4--larger{
+            width: 37%;
+        }
+        &__large-8--smaller{
+            width: 63%;
+        }
+        &__b-margin-until-large{
+            margin-bottom: 0;
+        }
     }
 
     /* Begin Equal Height Rules */
     &--equal-heights-at-medium{
         @mixin atMedium {
+            display: flex;
+        }
+        & > div{
+            float: none;
+            display: flex;
+        }
+    }
+    &--equal-heights-at-large{
+        @mixin atLarge {
             display: flex;
         }
         & > div{

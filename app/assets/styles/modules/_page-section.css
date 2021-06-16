@@ -11,7 +11,7 @@
 
     &--testimonials{
         background-color: #e0e6df;
-        @mixin atMedium {
+        @mixin atLarge {
             background: url('assets/images/testimonials-bg.jpg') top center no-repeat;
             background-size: cover;            
         }
@@ -19,6 +19,12 @@
     &--no-b-padding-until-medium{
         padding-bottom: 0px;
         @mixin atMedium {
+            padding-bottom: 4.5rem;          
+        }
+    }
+    &--no-b-padding-until-large{
+        padding-bottom: 0px;
+        @mixin atLarge {
             padding-bottom: 4.5rem;          
         }
     }
