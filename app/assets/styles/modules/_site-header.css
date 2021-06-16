@@ -1,0 +1,21 @@
+.site-header{
+    /*  relative to top left of page in western
+        reading methods (left->right, top->bottom)
+    */
+    padding: 10px 0;
+    position: absolute;
+    z-index: 2;
+    background-color: $mainBlue--30;
+    width: 100%;
+
+    &__btn-container{
+        float: right;
+    }
+
+    &__logo{
+        position: absolute;
+        top: 0;
+        background-color: $mainBlue;
+        padding: 25px 36px;
+    }
+}
