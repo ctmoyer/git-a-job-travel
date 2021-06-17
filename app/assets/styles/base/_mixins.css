@@ -20,6 +20,12 @@
 /* To bring them back into the flow of the page, you clear them */
 /* Using the psudo selector ::after allows you to add empty content and clear
     without polluting the html */
+
+/*  This was prior to updating the site to use css grid and css flexbox
+    Leaving this commented out as a reminder when working with floats and
+    to serve as a lazy repo of boilerplate code.
+*/
+/*
 @define-mixin clearfix{
     &::after{
         content: "";
@@ -27,3 +33,4 @@
         display: table;
     }
 }
+*/
