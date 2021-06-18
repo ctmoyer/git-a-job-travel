@@ -14,7 +14,12 @@
     
     @mixin atMedium {
         background-color: $mainBlue--30;
-        
+        /*  Sticky Header */
+        position: fixed;
+
+        &--dark{
+            background-color: rgba(23, 51, 72, .85);
+        }
     }
 
     &__btn-container{
@@ -35,6 +40,16 @@
             left: auto;
             transform: translateX(0);    
             padding: 25px 36px;
+            transform: scale(1);
+            transition: transform .2s ease-in-out;
+            transform-origin: top center;
+
+            /*  When the site header is dark,
+             *  Select .site-header__logo
+            */
+            .site-header--dark &{
+                transform: scale(.59);
+            }
         }
     }
 
