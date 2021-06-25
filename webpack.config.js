@@ -34,7 +34,7 @@ let pages = fse.readdirSync('./app').filter( file => {
     return file.endsWith('.html')
 }).map( page => {
     return new HtmlWebpackPlugin({
-        filename: page,
+        filename: `${page}`.replace('.html', '.md'),
         template: `./app/${page}`
     });
 });
