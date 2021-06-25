@@ -18,9 +18,9 @@ const postCSSPlugins = [
 class RunAfterCompile{
     apply(compiler){
         compiler.hooks.done.tap('Copy images!', () =>{
-            // changed 'dist' => 'docs
-            // Hosting on github pages requirement
-            fse.copySync('./app/assets/images', './docs/assets/images');
+            // changed 'docs' => 'dist'
+            // Hosting on netlify
+            fse.copySync('./app/assets/images', './dist/assets/images');
         });
     }
 }
@@ -34,7 +34,7 @@ let pages = fse.readdirSync('./app').filter( file => {
     return file.endsWith('.html')
 }).map( page => {
     return new HtmlWebpackPlugin({
-        filename: `${page}`.replace('.html', '.md'),
+        filename: `${page}`,
         template: `./app/${page}`
     });
 });
@@ -83,9 +83,9 @@ if(currentTask == 'build'){
     config.output= {
         filename: '[name].[chunkhash].js',
         chunkFilename: '[name].[chunkhash].js',
-        // changed 'dist' => 'docs
-        // Hosting on github pages requirement
-        path: path.resolve(__dirname, 'docs')
+            // changed 'docs' => 'dist'
+            // Hosting on netlify
+        path: path.resolve(__dirname, 'dist')
     }
     config.mode = 'production'
     config.optimization = {
