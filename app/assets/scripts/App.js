@@ -3,6 +3,7 @@ import 'lazysizes';
 import MobileMenu from './MobileMenu';
 import RevealOnScroll from './RevealOnScroll';
 import StickyHeader from './StickyHeader';
+import clientArea from './clientArea';
 
 new StickyHeader();
 // const revealOnScroll = new RevealOnScroll();
@@ -10,6 +11,7 @@ new RevealOnScroll(document.querySelectorAll('.feature-item'));
 new RevealOnScroll(document.querySelectorAll('.testimonial'),85);
 new MobileMenu();
 let modal;
+new clientArea();
 
 document.querySelectorAll('.open-modal').forEach( el => {
     el.addEventListener('click', e => {
